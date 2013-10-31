@@ -9,15 +9,6 @@ end
 
 post '/posts/new' do
 
-  # Create a new post object and save it to DB
-
-  # LOOP through each tag
-  #   Attempt to create the tag
-  #   Search through DB and retrieve the tag
-  #   Push the tags into the post with:    post.tags << tag
-  #   Save the post
-  #END LOOP
-
   post_title = params[:title]
 
   post_tags_csv = params[:tags]
@@ -116,24 +107,3 @@ post '/posts/edit/:id' do
 
    redirect to '/posts/list'
 end
-
-# def create_tag_list(csv_tag_str)
-#   tags = csv_tag_str.split(",")
-#   tags = tags.map do |tag|
-#     tag.strip
-#   end
-
-#   tags.uniq!
-#   tags
-# end
-
-# def create_error_message(post)
-#   raw_message = post.errors.messages
-
-#   error_message = ""
-#   raw_message.each do |field, msg|
-#     error_message += "#{field} #{msg[0]}\n"
-#   end
-
-#   error_message
-# end

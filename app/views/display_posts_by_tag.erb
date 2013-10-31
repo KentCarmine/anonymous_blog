@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Anonymous Blog</h1>
+  <h1>Posts With the Tag <%=@tag.name%></h1>
+
+  <%@posts.each do |post|%>
+    <a href="/posts/<%=post.id%>"><%=post.title%></a>
+    <br>
+  <%end%>
+
+</div>

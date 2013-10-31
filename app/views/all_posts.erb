@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Anonymous Blog</h1>
+  <h1>View all Posts</h1>
+
+  <%@all_posts.each do |post|%>
+    <a href="/posts/<%=post.id%>"><%=post.title%></a>
+    <a href ="/posts/edit/<%=post.id%>">Edit this post</a>
+    <form action=<%="/posts/delete/#{post.id}"%> method ="post">
+        <input type="submit" value="Delete This Post">
+    </form>
+    <br> <br>
+  <%end%>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Anonymous Blog</h1>
+  <% if @error_message %>
+  <%= "<h3>ERRORS:  #{@error_message} </h3>" %>
+  <% end %>
+  <br>
+  <form action="/posts/edit/<%=@post.id%>" method="post">
+    Fill in your post information:
+    <br>
+    <input type="text" name="title" value="<%=@post.title%>">
+    <input type="text" name="tags" value="<%=@tag_names%>">
+    <textarea rows="8" cols="50" name ="post_text"><%=@post.body%></textarea>
+    <input type="submit" value="Submit">
+  </form>
+
+
+</div>
